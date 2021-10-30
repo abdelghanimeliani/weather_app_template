@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width ,
               height: MediaQuery.of(context).size.height*0.5,
               decoration: const BoxDecoration(
-                color: Color(0xff00ACC1) ,
+                color: Color(0xff00ACC1)
             ),
               child: Column(
                 children: [
@@ -148,9 +149,69 @@ class HomePage extends StatelessWidget {
 
                 ],
               ),
-            )],
+            ) ,
+          Container(
+            height: MediaQuery.of(context).size.height*0.7,
+            width: MediaQuery.of(context).size.width,
+            child: ListView(
+              children: [
+                ItemCity("alger", Colors.white, '20°C', Icon(Icons.wb_sunny , color:  Colors.white,)),
+                ItemCity("batna", Color(0xFFB3E5FC) ,  '10°C', Icon(Icons.cloud_outlined , color:  Colors.white,)) ,
+                ItemCity("medea", Colors.white, '7°C', Icon(Icons.wb_sunny , color:  Colors.white,))  ,
+                ItemCity("skikda", Color(0xFFB3E5FC), '7°C', Icon(Icons.wb_sunny , color:  Colors.white,))  ,
+                ItemCity("tiraret", Colors.white, '7°C', Icon(Icons.wb_sunny , color:  Colors.white,))  ,
+                ItemCity("adrar", Colors.white, '30°C', Icon(Icons.wb_sunny , color:  Colors.white,))  ,
+                ItemCity("setif", Colors.white, '7°C', Icon(Icons.wb_sunny , color:  Colors.white,))  ,
+              ],
+            ),
+          )
+
+
+          ],
         ),
       ),
     );
   }
 }
+
+
+class ItemCity extends StatelessWidget {
+  final  Color color ;
+  final String temp ;
+  final Icon icon ;
+  final String city;
+
+   const ItemCity(this.city ,  this.color ,  this.temp , this.icon );
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 70,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(color: this.color),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+             Text("09:20" , style: TextStyle(fontSize: 25 , color: Colors.grey),
+             ) ,
+            Text(this.city , style: TextStyle(fontSize: 25 , color: Colors.black)
+            ) ,
+            Text(temp ,style :  TextStyle(fontSize: 25 , color: Colors.black , fontWeight: FontWeight.bold)),
+            Container(
+              height: 50,
+              width: 50,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle ,
+                color: Colors.amber ,
+              ),
+              child: icon
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
