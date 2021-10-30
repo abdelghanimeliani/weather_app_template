@@ -1,3 +1,4 @@
+import 'package:comeback/homepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,8 @@ main(){
   runApp(MediaQuery(
     data: new MediaQueryData(),
       child: MaterialApp(
-        home:MyMeteo() ,)));
+        home:HomePage() ,
+      )));
 }
 class MyMeteo extends StatelessWidget{
   @override
