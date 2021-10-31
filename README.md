@@ -1,7 +1,6 @@
 # weather app template
 
 its just 3 screens you may need for your weather app
-<<<<<<< HEAD
 
 |splash|home|details|
 |:------------:|:------------:||:------------:|
