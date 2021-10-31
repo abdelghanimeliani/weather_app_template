@@ -1,3 +1,4 @@
+import 'package:comeback/detail.dart';
 import 'package:comeback/homepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ main(){
   runApp(MediaQuery(
     data: new MediaQueryData(),
       child: MaterialApp(
-        home:HomePage() ,
+        home:DetailPage() ,
       )));
 }
 class MyMeteo extends StatelessWidget{
