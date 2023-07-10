@@ -5,3 +5,8 @@
 
 ![spash](readme_assets/splash.png)|![home](readme_assets/home.PNG)|![details](readme_assets/details.PNG)|
 
+created by
+
+Abdelghani MELIANI
+Oussama DJATAOU
+
